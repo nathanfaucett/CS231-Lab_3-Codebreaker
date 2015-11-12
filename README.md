@@ -3,7 +3,7 @@ For this lab assignment, you will be implementing a simple game called “Codebr
 In response to each of the player's guesses, the computer provides clues which can help the player to crack the code through a process of deduction.  The computer checks the digits guessed by the player, compares each of them to every one of the digits in the secret code, and determines whether each digit in the player's guess is of the correct identity and in the correct place (these are the “correct” digits), or whether each digit is of the correct identity but is not in the correct place (these are the “misplaced” digits).  With each guess, it counts the number of “correct” and “misplaced” digits, and prints these totals to the screen, alongside the player's guess, in ordered columns.  The player can use this information to determine which digits need to be exchanged or replaced, until the player's guess exactly matches the secret code.  The computer then prints a message of congratulations, along with the total number of guesses it took the player to crack the code.
 
 This lab assignment is worth 100 points and is due by the end of the day on Friday, October 16th.  Your output should resemble the following (in this example, the secret code is 2426):
-
+```bash
 WELCOME TO CODEBREAKER!
 
 The computer has created the secret code, and your mission is to guess
@@ -38,6 +38,7 @@ Congratulations, you guessed the code!
 It only took you 9 guess(es)!
 
 Would you like to play again (Y/N)?
+```
 
 A few tips and hints to get you started:
 
@@ -48,6 +49,7 @@ Your game should continue to prompt the player for guesses until the player gues
 You may find it useful to convert an int value into the corresponding char value, so it can be compared with the user's input or printed to the screen as a character.  One way to do this is to add the int value to the character '0'.  For example, to check whether the player's guesses are within the range one to six, use '0' + CODE_SPAN to get the character '6', which is the upper limit of each character in the player's guess.
 To align your program's output neatly into columns, use the setw output manipulator we have discussed in class (your program must #include the <iomanip> library).  Use a width of 45 for the player's guess, and a width of 15 for the “correct” and “misplaced” digits (see the sample output for an example).
 To generate random numbers within a specific range, use the random number generator code given in the “Rock, Paper, Scissors” exercise, and add the following randint() function definitions, which allows you to specify either a max value or a min and max value.  Don't forget to add the corresponding function prototypes!
+```c++
 // RANDOM NUMBER GENERATOR ( >= MIN && < MAX )
 
 int randint(int min, int max) {
@@ -63,3 +65,4 @@ int randint(int max) {
      return ( rand() % max );
 
 } // End randint()
+```
